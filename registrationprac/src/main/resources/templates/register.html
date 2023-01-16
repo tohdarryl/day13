@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .error{
+            color:red
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" 
+        method="post" 
+        data-th-object="${person}" 
+        data-th-action="@{/register}">
+        
+        Name:
+        <input type="text" data-th-field="*{name}"/>
+        <span class="error" data-th-if="${#fields.hasErrors('name')}" data-th-errors="*{name}"></span>
+        <br>
+        Email:
+        <input type="text" data-th-field="*{email}"/>
+        <span class="error" data-th-if="${#fields.hasErrors('email')}" data-th-errors="*{email}"></span>
+        <br>
+        Age:
+        <input type="number" data-th-field="*{age}"/>
+        <span class="error" data-th-if="${#fields.hasErrors('age')}" data-th-errors="*{age}"></span>
+        <br>
+        Are you married?:
+        <input type="radio" value="1" data-th-field="*{isMarried}"/>
+        <br>
+        Hobbies:
+        <input type="checkbox" value="1" data-th-field="*{hobbies}">Sleep</input>
+        <input type="checkbox" value="2" data-th-field="*{hobbies}">Eat</input>
+        <input type="checkbox" value="3" data-th-field="*{hobbies}">Bathe</input>
+        <br>
+        Date of birth:
+        <input type="date" data-th-field="*{dateOfBirth}"/>
+        <br>
+
+        <button type="submit">Register</button>
+
+
+
+
+
+
+    </form>
+</body>
+</html>
